@@ -35,5 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public void modifyData (View v) {
         Intent myIntent = new Intent(this, DataActivity.class);
         this.startActivity(myIntent);
+        overridePendingTransition(R.anim.slide_form_left,0);
     }
 }

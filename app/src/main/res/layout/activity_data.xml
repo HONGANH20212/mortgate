@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="@dimen/activity_margin">
+    android:layout_margin="@dimen/activity_margin"
+    android:orientation="vertical">
+
     <TextView
         android:id="@+id/label_years"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_years" />
+        android:layout_marginTop="28dp"
+        android:text="@string/label_years"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:layout_toRightOf="@+id/label_years"
-        android:layout_width="match_parent"
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignLeft="@+id/data_rate"/>
+        app:layout_constraintStart_toEndOf="@+id/label_years"
+        app:layout_constraintTop_toTopOf="@+id/label_years">
 
         <RadioButton
+            android:id="@+id/ten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ten"
             android:text="@string/ten" />
 
         <RadioButton
+            android:id="@+id/fifteen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fifteen"
             android:text="@string/fifteen" />
 
         <RadioButton
+            android:id="@+id/thirty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/thirty"
             android:checked="true"
             android:text="@string/thirty" />
     </RadioGroup>
@@ -41,46 +49,57 @@
         android:id="@+id/label_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/label_years"
-        android:layout_marginTop="50dp"
-        android:text="@string/label_amount"/>
+        android:layout_marginTop="48dp"
+        android:text="@string/label_amount"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_years" />
 
     <EditText
         android:id="@+id/data_amount"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_amount"
-        android:layout_alignLeft="@+id/data_rate"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/label_amount"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal"
         android:text="@string/amountDecimal"
-        android:inputType="numberDecimal" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintStart_toEndOf="@+id/label_amount"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/label_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/label_amount"
-        android:text="@string/label_rate" />
+        android:layout_marginTop="48dp"
+        android:text="@string/label_rate"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_amount" />
 
     <EditText
         android:id="@+id/data_rate"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/label_rate"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/label_rate"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="26dp"
+        android:inputType="numberDecimal"
         android:text="@string/rateDecimal"
-        android:inputType="numberDecimal"/>
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toEndOf="@+id/label_rate"
+        app:layout_constraintTop_toBottomOf="@+id/data_amount" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/data_rate"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:onClick="goBack"
-        android:text="@string/done"/>
-</RelativeLayout>
+        android:text="@string/done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_rate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

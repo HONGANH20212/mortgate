@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/activity_margin"
+    android:background="#FBE3E3"
     tools:context="com.example.mortgage.MainActivity">
 
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
-            android:text="@string/label_amount"
-            android:padding="10dip" />
+            android:padding="10dip"
+            android:text="@string/label_amount" />
+
         <TextView
             android:id="@+id/amount"
             android:text="@string/amount" />
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content" android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
         <TextView
-            android:text="@string/label_years"
-            android:padding="10dip" />
+            android:padding="10dip"
+            android:text="@string/label_years" />
+
         <TextView
             android:id="@+id/years"
             android:text="@string/years" />
@@ -32,8 +37,11 @@
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
-            android:text="@string/label_rate" android:padding="10dip" />
+            android:padding="10dip"
+            android:text="@string/label_rate" />
+
         <TextView
             android:id="@+id/rate"
             android:text="@string/rate" />
@@ -43,13 +51,16 @@
 
     <View
         android:layout_height="5dip"
-        android:background="#FF0000" />
+        android:background="#4CAF50" />
+
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
-            android:text="@string/label_monthly_payment"
-            android:padding="10dip" />
+            android:padding="10dip"
+            android:text="@string/label_monthly_payment" />
+
         <TextView
             android:id="@+id/payment"
             android:text="@string/monthly_payment" />
@@ -60,8 +71,9 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="@string/label_total_payment"
-            android:padding="10dip" />
+            android:padding="10dip"
+            android:text="@string/label_total_payment" />
+
         <TextView
             android:id="@+id/total"
             android:text="@string/total_payment" />
@@ -69,12 +81,32 @@
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingTop="50dip">
+
         <Button
+            android:onClick="modifyData"
             android:text="@string/modify_data"
-            android:onClick="modifyData" />
+            android:textColorLink="#673AB7" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="50dip">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00F44336"
+            android:text="02-Võ Thị Hồng Ánh-N20DCVT002"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </TableRow>
 
 </TableLayout>
